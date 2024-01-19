@@ -1,5 +1,5 @@
 {% set name = "poincare" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poincare-{{ version }}.tar.gz
-  sha256: 38c1c07f3a391f86e3f89aa1612981fc4d801cfc5f738d12b02404ddab7c0afe
+  sha256: 95476ec9e9f88946c97a5e7bdbd4e7535038c597ef2924c2c36f7e4a8e0d2040
 
 build:
   noarch: python
