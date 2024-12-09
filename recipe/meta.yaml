@@ -1,13 +1,14 @@
 {% set name = "poincare" %}
-{% set version = "0.5.0" %}
+{% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/poincare-{{ version }}.tar.gz
-  sha256: 95476ec9e9f88946c97a5e7bdbd4e7535038c597ef2924c2c36f7e4a8e0d2040
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poincare-{{ version }}.tar.gz
+  sha256: d50f092d3083fc6423afc6dda0045def7ac8440a3640532267ecdd5b5cc95f8a
 
 build:
   noarch: python
@@ -16,20 +17,21 @@ build:
 
 requirements:
   host:
-    - python >=3.7
-    - setuptools
-    - setuptools-scm
+    - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy
     - pandas
     - pint
     - pint-pandas
     - scipy
-    - symbolite >=0.4
+    - symbolite >=0.6.0
     - tabulate
-    - typing-extensions
+    - typing_extensions
+    - scipy-events
 
 test:
   imports:
@@ -37,6 +39,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
