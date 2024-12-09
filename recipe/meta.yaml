@@ -1,5 +1,6 @@
 {% set name = "poincare" %}
 {% set version = "0.6.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -16,20 +17,21 @@ build:
 
 requirements:
   host:
-    - python >=3.7
-    - setuptools
-    - setuptools-scm
+    - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
     - numpy
     - pandas
     - pint
     - pint-pandas
     - scipy
-    - symbolite >=0.4
+    - symbolite >=0.6.0
     - tabulate
-    - typing-extensions
+    - typing_extensions
+    - scipy-events
 
 test:
   imports:
@@ -37,6 +39,7 @@ test:
   commands:
     - pip check
   requires:
+    - python {{ python_min }}
     - pip
 
 about:
