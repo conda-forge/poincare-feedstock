@@ -1,5 +1,5 @@
 {% set name = "poincare" %}
-{% set version = "0.6.0" %}
+{% set version = "0.6.1" %}
 {% set python_min = "3.10" %}
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/poincare-{{ version }}.tar.gz
-  sha256: d50f092d3083fc6423afc6dda0045def7ac8440a3640532267ecdd5b5cc95f8a
+  sha256: 0c4026e3a940f1a40d483f33b70ecd5e1977295e08489c34378a89a4a9161d58
 
 build:
   noarch: python
@@ -31,7 +31,7 @@ requirements:
     - symbolite >=0.6.0
     - tabulate
     - typing_extensions
-    - scipy-events
+    - scipy-events >=0.3.1
 
 test:
   imports:
