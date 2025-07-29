@@ -1,0 +1,51 @@
+context:
+  name: poincare
+  version: "0.6.3"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/poincare-${{ version }}.tar.gz
+  sha256: 101f70556a8b60ac62837f3c6cc0af95242f9da048caa30bd8d8bc8a73dc198e
+
+build:
+  noarch: python
+  number: 0
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python {{ python_min }}
+    - hatchling
+    - hatch-vcs
+    - pip
+  run:
+    - python >={{ python_min }}
+    - numpy
+    - pandas
+    - pint
+    - pint-pandas
+    - scipy
+    - symbolite >=0.6.0,<0.7
+    - tabulate
+    - typing_extensions
+    - scipy-events >=0.3.1
+
+tests:
+  python:
+    imports:
+      - poincare
+
+about:
+  homepage: https://github.com/maurosilber/poincare
+  summary: Simulation of dynamical systems.
+  license: MIT
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - maurosilber
+    - hgrecco
