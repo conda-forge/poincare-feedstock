@@ -3,11 +3,17 @@ About poincare-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/poincare-feedstock/blob/main/LICENSE.txt)
 
-Home: https://github.com/maurosilber/poincare
+Home: https://github.com/dyscolab/poincare
 
 Package license: MIT
 
 Summary: Simulation of dynamical systems.
+
+![Package](https://img.shields.io/pypi/v/poincare?label=poincare)
+![CodeStyle](https://img.shields.io/badge/code%20style-black-000000.svg)
+![License](https://img.shields.io/pypi/l/poincare?label=license)
+![PyVersion](https://img.shields.io/pypi/pyversions/poincare?label=python)
+[![CI](https://github.com/dyscolab/poincare/actions/workflows/ci.yml/badge.svg)](https://github.com/dyscolab/poincare/actions/workflows/ci.yml)
 
 Current build status
 ====================
@@ -98,12 +104,12 @@ it is possible to build and upload installable packages to the
 [conda-forge](https://anaconda.org/conda-forge) [anaconda.org](https://anaconda.org/)
 channel for Linux, Windows and OSX respectively.
 
-To manage the continuous integration and simplify feedstock maintenance
+To manage the continuous integration and simplify feedstock maintenance,
 [conda-smithy](https://github.com/conda-forge/conda-smithy) has been developed.
 Using the ``conda-forge.yml`` within this repository, it is possible to re-render all of
 this feedstock's supporting files (e.g. the CI configuration files) with ``conda smithy rerender``.
 
-For more information please check the [conda-forge documentation](https://conda-forge.org/docs/).
+For more information, please check the [conda-forge documentation](https://conda-forge.org/docs/).
 
 Terminology
 ===========
@@ -130,7 +136,7 @@ merged, the recipe will be re-built and uploaded automatically to the
 everybody to install and use from the `conda-forge` channel.
 Note that all branches in the conda-forge/poincare-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
-on branches in forks and branches in the main repository should only be used to
+on branches in forks, and branches in the main repository should only be used to
 build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:

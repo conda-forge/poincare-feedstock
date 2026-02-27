@@ -1,0 +1,59 @@
+context:
+  version: "1.0.0"
+  python_min: "3.12"
+
+package:
+  name: poincare
+  version: ${{ version }}
+
+source:
+- url: https://pypi.org/packages/source/p/poincare/poincare-${{ version }}.tar.gz
+  sha256: a70bd24b231728790167682d755a9f1c33ed7b6cf75b6f314d7c869a2d03d0e3
+
+build:
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  noarch: python
+  number: 0
+
+requirements:
+  host:
+  - python ${{ python_min }}.*
+  - uv-build
+  - pip
+  run:
+  - python >=${{ python_min }}
+  - numpy
+  - pandas
+  - xarray
+  - pint-xarray
+  - pint
+  - pint-pandas
+  - scipy
+  - symbolite >=1.0.0
+  - tabulate
+  - typing_extensions
+  - scipy-events >=0.3.1
+  - statsmodels
+
+tests:
+- python:
+    imports:
+    - poincare
+    pip_check: true
+
+about:
+  homepage: https://github.com/dyscolab/poincare
+  license: MIT
+  license_file: LICENSE
+  summary: Simulation of dynamical systems.
+  description: |
+    ![Package](https://img.shields.io/pypi/v/poincare?label=poincare)
+    ![CodeStyle](https://img.shields.io/badge/code%20style-black-000000.svg)
+    ![License](https://img.shields.io/pypi/l/poincare?label=license)
+    ![PyVersion](https://img.shields.io/pypi/pyversions/poincare?label=python)
+    [![CI](https://github.com/dyscolab/poincare/actions/workflows/ci.yml/badge.svg)](https://github.com/dyscolab/poincare/actions/workflows/ci.yml)
+
+extra:
+  recipe-maintainers:
+    - maurosilber
+    - hgrecco
