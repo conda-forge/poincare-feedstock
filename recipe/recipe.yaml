@@ -29,7 +29,7 @@ requirements:
     - pint
     - pint-pandas
     - scipy
-    - symbolite >=1.0.0
+    - symbolite >=1.1.0
     - tabulate
     - typing_extensions
     - scipy-events >=0.3.1
