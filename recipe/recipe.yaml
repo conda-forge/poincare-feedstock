@@ -1,5 +1,5 @@
 context:
-  version: "1.2.0"
+  version: "1.3.0"
   python_min: "3.12"
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/poincare/poincare-${{ version }}.tar.gz
-    sha256: 6861363ee2ffa41f0e3693fe842b1d23581a5ba13b90302d8fff363ed3dbb5d7
+    sha256: 6149bcbd39e6ec4a40c83abbead836a7cc2d95e838dc26eeac0a2c9aeed156ce
 
 build:
   script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
